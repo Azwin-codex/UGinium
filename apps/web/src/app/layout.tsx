@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 
 import { Geist, Geist_Mono } from "next/font/google";
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 
 import "./globals.css";
 

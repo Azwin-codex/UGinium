@@ -1,84 +1,52 @@
-export default function HomePage() {
+import { Button } from "@/components/foundation/Button";
+import { CenteredLayout } from "@/components/layouts/CenteredLayout";
+import { AcademyWordmark } from "@/components/ui/AcademyWordmark";
+import { DormantOrb } from "@/components/ui/DormantOrb";
+import { IconArrowRight } from "@/components/ui/icons";
+
+export default function AcademyEntryPage() {
   return (
-    <main className="min-h-dvh bg-surface-950 text-text-primary flex items-center justify-center px-8">
-      <div className="max-w-3xl w-full space-y-8">
-        {/* Title */}
-        <div className="space-y-3">
-          <p className="text-sm uppercase tracking-[0.3em] text-text-muted">
-            UGinium Foundation Test
+    <CenteredLayout>
+      {/* Ambient backdrop */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 45% at 50% 38%, color-mix(in srgb, var(--campus-primary) 7%, transparent), transparent)",
+        }}
+      />
+
+      <div className="animate-ug-fade-up relative flex flex-col items-center text-center">
+        <DormantOrb size={200} />
+
+        <div className="mt-10 space-y-4">
+          <p className="text-xs uppercase tracking-[0.3em] text-text-muted">
+            The University Operating System
           </p>
 
-          <h1
-            className="font-display text-6xl tracking-[0.14em]"
-            style={{ fontWeight: 700 }}
-          >
-            UGINIUM
-          </h1>
+          <AcademyWordmark />
 
-          <p className="text-text-secondary text-lg">
-            Design system verification page.
-          </p>
-        </div>
-
-        {/* Token Preview */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="h-24 rounded-lg bg-surface-900 border border-border-default flex items-center justify-center">
-            Surface 900
-          </div>
-
-          <div className="h-24 rounded-lg bg-surface-800 border border-border-default flex items-center justify-center">
-            Surface 800
-          </div>
-
-          <div className="h-24 rounded-lg border border-border-default flex items-center justify-center">
-            Border
-          </div>
-
-          <div
-            className="h-24 rounded-lg flex items-center justify-center text-white"
-            style={{ background: "var(--campus-primary)" }}
-          >
-            Campus
-          </div>
-        </div>
-
-        {/* Typography */}
-        <div className="space-y-2">
-          <h2 className="text-xl font-semibold">
-            Typography Hierarchy
-          </h2>
-
-          <p className="text-text-primary">
-            Primary text
-          </p>
-
-          <p className="text-text-secondary">
-            Secondary text
-          </p>
-
-          <p className="text-text-muted">
-            Muted text
+          <p className="mx-auto max-w-md text-balance text-text-secondary">
+            Discover talent. Build Guilds. Complete Missions. Turn your
+            university years into a professional legacy.
           </p>
         </div>
 
-        {/* Motion Test */}
-        <div className="flex gap-8 items-center">
-          <div
-            className="w-24 h-24 rounded-full animate-ug-breathe"
-            style={{
-              background:
-                "radial-gradient(circle, var(--campus-primary), transparent 70%)",
-            }}
-          />
-
-          <div className="animate-ug-fade-up">
-            <p className="text-text-secondary">
-              If this text fades upward on load and the orb gently breathes,
-              your global animations are working.
-            </p>
-          </div>
+        <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row">
+          <Button href="/academy" size="lg">
+            Enter the Academy
+            <IconArrowRight size={18} />
+          </Button>
+          <Button href="/discover" variant="secondary" size="lg">
+            Explore first
+          </Button>
         </div>
+
+        <p className="mt-12 text-xs text-text-muted">
+          Built for students. Powered by collaboration.
+        </p>
       </div>
-    </main>
+    </CenteredLayout>
   );
 }
